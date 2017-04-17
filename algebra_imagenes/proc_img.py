@@ -34,12 +34,16 @@ def preprocesing(img_1,img_2):
 
 def sumar_rgb_clam(img_1,img_2):
     img_result = img_1 + img_2
-    img_result[img_result>255] = 255
+    img_result[img_result[:,:,0]>255] = 255
+    img_result[img_result[:,:,1]>255] = 255
+    img_result[img_result[:,:,2]>255] = 255
     return img_result
 
 def sumar_rgb_prom(img_1,img_2):
     img_result = (img_1 + img_2)/2
-    img_result[img_result>255] = 255
+    img_result[img_result[:,:,0]>255] = 255
+    img_result[img_result[:,:,1]>255] = 255
+    img_result[img_result[:,:,2]>255] = 255
     return img_result
 
 def sumar_YIQ_clam(img_1,img_2):
@@ -59,12 +63,16 @@ def sumar_YIQ_prom(img_1,img_2):
 
 def restar_rgb_clam(img_1,img_2):
     img_result = img_1 - img_2
-    img_result[img_result<0] = 0
+    img_result[img_result[:,:,0]<0] = 0
+    img_result[img_result[:,:,1]<0] = 0
+    img_result[img_result[:,:,2]<0] = 0
     return img_result
 
 def restar_rgb_prom(img_1,img_2):
     img_result = (img_1 - img_2)/2
-    img_result[img_result<0] = 0
+    img_result[img_result[:,:,0]<0] = 0
+    img_result[img_result[:,:,1]<0] = 0
+    img_result[img_result[:,:,2]<0] = 0
     return img_result
 
 def restar_YIQ_clam(img_1,img_2):
