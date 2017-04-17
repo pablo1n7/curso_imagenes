@@ -1,0 +1,71 @@
+<ListView>
+
+    GridLayout:
+        rows:4
+        cols:2
+        size_hint:1,0.9
+        
+        spacing: 10,10
+        
+        BoxLayout:
+            
+            size_hint: 1,1
+            ImageIn:
+                id: img_1
+                background_disabled_normal: str(False)
+                source: 'img/image.jpg'
+                on_press: self.click(img_1)
+    
+        BoxLayout:
+            
+            size_hint: 1,1
+            ImageIn:
+                id: img_2
+                background_disabled_normal: str(False)
+                source: 'img/image.jpg'
+
+        BoxLayout:
+            #padding: 0,-200,0,-200
+            size_hint:0.2,0.2
+            SliderIn:
+                on_value: self.change_value(img_1,img_2,alpha.value/10,beta.value/10)
+                id: alpha
+                min: 1
+                max: 20
+                value: 10
+                size_hint: 1.0,1.0
+                step: 1
+            
+        Label:
+            size_hint:1,0.2
+            text: 'Alpha value is %s' % float(alpha.value/10)
+        
+        BoxLayout:
+            #padding: 0,-200,0,-200
+            size_hint:0.2,0.2
+            SliderIn:
+                id: beta
+                on_value: self.change_value(img_1,img_2,alpha.value/10,beta.value/10)
+                min: -20
+                max: 20
+                value: 10
+                size_hint: 1.0,1.0
+                step: 1
+
+        Label:
+            size_hint:1,0.2
+            text: 'Beta value is %s' % float(beta.value/10)
+
+        #BoxLayout:
+            #size_hint:0.1,0.3
+            #ButtonIn:
+                #size_hint: 0.1,0.1
+                #text: "Cargar"
+                #on_press: self.click(img_1)
+
+        #BoxLayout:
+         #   size_hint:0.2,0.2
+          #  ButtonIn:
+           #     on_press: self.change_value(img_1,img_2,alpha.value/10,beta.value/10)
+            #    size_hint: 0.6,0.2
+             #   text: "Operar"

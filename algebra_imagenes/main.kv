@@ -1,0 +1,39 @@
+<ListView>
+
+    GridLayout:
+        rows:2
+        cols:2
+        size_hint:1,0.9
+        
+        spacing: 10,10
+        
+        BoxLayout:
+            size_hint: 1,1
+            ImageIn:
+                id: img_1
+                background_disabled_normal: str(False)
+                source: 'img/image.jpg'
+                on_press: self.click(img_1)
+    
+        BoxLayout:
+            size_hint: 1,1
+            ImageIn:
+                id: img_2
+                background_disabled_normal: str(False)
+                source: 'img/image.jpg'
+                on_press: self.click(img_2)
+        
+        BoxLayout:
+            size_hint: 0.3,0.3
+            ButtonIn:
+                size_hint: 0.3,0.3
+                text: "Operar"
+                on_press: self.click(img_1,img_2,operacion)
+
+        BoxLayout:
+            size_hint: 0.3,0.3
+            Spinner:
+                id: operacion
+                size_hint: 0.3,0.3
+                text: "CuasiSuma-RGB-Clampeada"
+                values: "CuasiSuma-RGB-Clampeada","CuasiSuma-YIQ-Clampeada","CuasiSuma-RGB-Promedio","CuasiSuma-YIQ-Promedio","CuasiResta-RGB-Clampeada","CuasiResta-YIQ-Clampeada","CuasiResta-RGB-Promedio","CuasiResta-YIQ-Promedio"
