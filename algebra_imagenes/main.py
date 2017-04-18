@@ -28,7 +28,9 @@ operaciones = {"CuasiSuma-RGB-Clampeada":proc_img.sumar_rgb_clam,
                 "CuasiResta-RGB-Clampeada":proc_img.restar_rgb_clam,
                 "CuasiResta-YIQ-Clampeada":proc_img.restar_YIQ_clam,
                 "CuasiResta-RGB-Promedio":proc_img.restar_rgb_prom,
-                "CuasiResta-YIQ-Promedio":proc_img.restar_YIQ_prom
+                "CuasiResta-YIQ-Promedio":proc_img.restar_YIQ_prom,
+                "If-Ligther":proc_img.ifligther,
+                "If-Darker": proc_img.ifdarker
                 }
 
 

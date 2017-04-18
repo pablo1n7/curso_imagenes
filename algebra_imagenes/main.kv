@@ -35,7 +35,7 @@
                 id: operacion
                 size_hint: 0.3,0.3
                 text: "CuasiSuma-RGB-Clampeada"
-                values: "CuasiSuma-RGB-Clampeada","CuasiSuma-YIQ-Clampeada","CuasiSuma-RGB-Promedio","CuasiSuma-YIQ-Promedio","CuasiResta-RGB-Clampeada","CuasiResta-YIQ-Clampeada","CuasiResta-RGB-Promedio","CuasiResta-YIQ-Promedio"
+                values: "CuasiSuma-RGB-Clampeada","CuasiSuma-YIQ-Clampeada","CuasiSuma-RGB-Promedio","CuasiSuma-YIQ-Promedio","CuasiResta-RGB-Clampeada","CuasiResta-YIQ-Clampeada","CuasiResta-RGB-Promedio","CuasiResta-YIQ-Promedio","If-Ligther","If-Darker"
 
 <Result_view>
     GridLayout:
@@ -43,15 +43,13 @@
         cols:1
         size_hint:1,0.98
         spacing: 30,30
-        BoxLayout:
-
+        ButtonIn:
             size_hint: 0.001,0.05
-            ButtonIn:
-                size: self.parent.size
-                text: "Return"
-                on_press: 
-                    root.manager.transition.direction = 'right'
-                    root.manager.current = 'operation'
+            size: self.parent.size
+            text: "Return"
+            on_press: 
+                root.manager.transition.direction = 'right'
+                root.manager.current = 'operation'
         BoxLayout:
             size_hint: 0.9,0.9
             ImageIn:

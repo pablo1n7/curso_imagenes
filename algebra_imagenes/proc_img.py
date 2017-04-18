@@ -90,6 +90,26 @@ def restar_YIQ_prom(img_1,img_2):
     #img_result[img_result>1] = 1
     return YIQ_to_RGB(img_result)
 
+def ifligther(img_1,img_2):
+    img_1_YIQ = RGB_to_YIQ(img_1)
+    img_2_YIQ = RGB_to_YIQ(img_2)
+    img1_y = img_1_YIQ[:,:,0] >= img_2_YIQ[:,:,0]
+    img2_y = img_1_YIQ[:,:,0] < img_2_YIQ[:,:,0]
+    img3_yiq = RGB_to_YIQ(img_1)
+    img3_yiq[img1_y] = img_1_YIQ[img1_y]
+    img3_yiq[img2_y] = img_2_YIQ[img2_y]
+    return YIQ_to_RGB(img3_yiq)
+
+def ifdarker(img_1,img_2):
+    img_1_YIQ = RGB_to_YIQ(img_1)
+    img_2_YIQ = RGB_to_YIQ(img_2)
+    img1_y = img_1_YIQ[:,:,0] <= img_2_YIQ[:,:,0]
+    img2_y = img_1_YIQ[:,:,0] > img_2_YIQ[:,:,0]
+    img3_yiq = RGB_to_YIQ(img_1)
+    img3_yiq[img1_y] = img_1_YIQ[img1_y]
+    img3_yiq[img2_y] = img_2_YIQ[img2_y]
+    return YIQ_to_RGB(img3_yiq)
+
 
 def YIQ_to_RGB(img_YIQ):
     # que el Y no sea mayor a 1
